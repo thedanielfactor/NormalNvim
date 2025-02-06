@@ -4,7 +4,7 @@
 -- ----------------------------------------
 
 -- Theme
-vim.g.default_colorscheme = "tokyonight-night"
+vim.g.default_colorscheme = "catppuccin-macchiato"
 
 -- Options --------------------------------------------------------------------
 vim.opt.breakindent = true -- Wrap indent to match  line start.
@@ -28,9 +28,9 @@ vim.opt.linebreak = true -- Wrap lines at 'breakat'.
 vim.opt.number = true -- Show numberline.
 vim.opt.preserveindent = true -- Preserve indent structure as much as possible.
 vim.opt.pumheight = 10 -- Height of the pop up menu.
-vim.opt.relativenumber = false -- Show relative numberline.
+vim.opt.relativenumber = true -- Show relative numberline.
 vim.opt.shiftwidth = 2 -- Number of space inserted for indentation.
-vim.opt.showmode = false -- Disable showing modes in command line.
+vim.opt.showmode = true -- Disable showing modes in command line.
 vim.opt.showtabline = 2 -- always display tabline.
 vim.opt.signcolumn = "yes" -- Always show the sign column.
 vim.opt.smartcase = true -- Case sensitivie searching.
@@ -56,13 +56,17 @@ vim.opt.scrolloff = 1000 -- Number of lines to leave before/after the cursor whe
 vim.opt.sidescrolloff = 8 -- Same but for side scrolling.
 vim.opt.selection = "old" -- Don't select the newline symbol when using <End> on visual mode.
 
-vim.opt.viewoptions:remove "curdir" -- Disable saving current directory with views.
-vim.opt.shortmess:append { s = true, I = true } -- Disable startup message.
-vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert.
-vim.opt.diffopt:append { "algorithm:histogram", "linematch:60" } -- Enable linematch diff algorithm
+vim.opt.viewoptions:remove("curdir") -- Disable saving current directory with views.
+vim.opt.shortmess:append({ s = true, I = true }) -- Disable startup message.
+vim.opt.backspace:append({ "nostop" }) -- Don't stop backspace at insert.
+vim.opt.diffopt:append({ "algorithm:histogram", "linematch:60" }) -- Enable linematch diff algorithm
 
-local is_android = vim.fn.isdirectory('/data') == 1
-if is_android then vim.opt.mouse = "v" else vim.opt.mouse = "a" end -- Enable scroll for android
+local is_android = vim.fn.isdirectory("/data") == 1
+if is_android then
+  vim.opt.mouse = "v"
+else
+  vim.opt.mouse = "a"
+end -- Enable scroll for android
 
 -- Globals --------------------------------------------------------------------
 vim.g.mapleader = " " -- Set leader key.
@@ -83,4 +87,3 @@ vim.g.lsp_signature_enabled = true -- Enable automatically showing lsp help as y
 vim.g.notifications_enabled = true -- Enable notifications.
 vim.g.semantic_tokens_enabled = true -- Enable lsp semantic tokens at start.
 vim.g.url_effect_enabled = true -- Highlight URLs with an underline effect.
-

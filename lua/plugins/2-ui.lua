@@ -50,7 +50,13 @@ return {
       plugins = { ["dashboard-nvim"] = true },
     },
   },
-
+  --  Catppuccin [theme]
+  --  https://github.com/catppuccin/nvim
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
   --  alpha-nvim [greeter]
   --  https://github.com/goolord/alpha-nvim
   {

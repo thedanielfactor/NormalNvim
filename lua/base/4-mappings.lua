@@ -672,7 +672,8 @@ end
 
 -- neotree
 if is_available("neo-tree.nvim") then
-  maps.n["<leader>e"] = { "<cmd>Neotree toggle<cr>", desc = "Neotree" }
+  maps.n["<leader>o"] = { "<cmd>Neotree toggle<cr>", desc = "Neotree" }
+  maps.n["<leader>e"] = { "<cmd>Neotree focus<cr>", desc = "Neotree Focus" }
 end
 
 -- session manager ---------------------------------------------------------
